@@ -1,0 +1,93 @@
+/* ============================================================
+   responsive.css — Nimbus · Responsive Breakpoints
+   ============================================================ */
+
+/* ── Large desktop ──────────────────────────────────────── */
+@media (min-width: 1200px) {
+  .main-content { padding: 40px 32px 72px; }
+}
+
+/* ── Tablet landscape ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .details-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-card { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: repeat(3, 1fr); min-width: unset; }
+}
+
+/* ── Tablet portrait ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px; height: auto;
+    flex-wrap: wrap; gap: 12px;
+    padding-top: 12px; padding-bottom: 12px;
+  }
+
+  .header-controls { margin-left: 0; width: 100%; }
+
+  .search-wrap { max-width: 100%; width: 100%; }
+
+  .fav-chips { display: none; } /* hide on mobile to avoid clutter */
+
+  .hero-card {
+    padding: 24px 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-temp { font-size: 64px; }
+  .hero-icon { font-size: 52px; }
+
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .forecast-strip {
+    grid-template-columns: repeat(5, minmax(110px, 1fr));
+    overflow-x: auto; padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-3) transparent;
+  }
+
+  .forecast-strip::-webkit-scrollbar { height: 4px; }
+  .forecast-strip::-webkit-scrollbar-track { background: transparent; }
+  .forecast-strip::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 2px; }
+
+  .details-grid { grid-template-columns: repeat(2, 1fr); }
+  .saved-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .main-content { padding: 20px 16px 48px; }
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-card { padding: 20px 16px; }
+  .hero-temp { font-size: 52px; letter-spacing: -2px; }
+  .hero-icon { font-size: 44px; }
+  .hero-temp-row { gap: 12px; }
+  .hero-desc { font-size: 16px; }
+
+  .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat-item { padding: 12px 8px; }
+  .stat-val { font-size: 13px; }
+
+  .details-grid { grid-template-columns: 1fr; }
+  .saved-grid { grid-template-columns: 1fr; }
+
+  .hero-actions { gap: 8px; }
+  .btn--ghost { padding: 7px 12px; }
+
+  .logo-badge { display: none; }
+  .loc-btn span { display: none; }
+}
+
+/* ── Very small mobile ──────────────────────────────────── */
+@media (max-width: 360px) {
+  .hero-temp { font-size: 44px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

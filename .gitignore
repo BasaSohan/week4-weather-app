@@ -1,0 +1,23 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Note: js/config.js contains your API key.
+# Consider adding it to .gitignore if sharing publicly:
+# js/config.js

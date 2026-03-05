@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nimbus — Real-time weather intelligence with forecasts, conditions, and saved cities.">
+  <title>Nimbus — Weather Intelligence</title>
+
+  <!-- Favicons / PWA -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌤</text></svg>">
+  <meta name="theme-color" content="#07090f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nimbus Weather">
+  <meta property="og:description" content="Real-time weather intelligence">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/weather-icons.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="app-header">
+
+    <!-- Logo -->
+    <a class="logo" href="." aria-label="Nimbus Weather home">
+      <div class="logo-mark">🌤</div>
+      <div>
+        <div class="logo-text">Nimbus</div>
+        <div class="logo-badge">Weather Intelligence</div>
+      </div>
+    </a>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <div class="search-inner">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search city…" autocomplete="off" spellcheck="false" aria-label="Search city">
+        <button class="search-btn" id="searchBtn" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+      <div class="ac-list" id="autocompleteList" role="listbox"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="header-controls">
+      <!-- Unit toggle -->
+      <div class="unit-toggle" role="group" aria-label="Temperature unit">
+        <button class="unit-btn active" id="btnC" aria-pressed="true">°C</button>
+        <button class="unit-btn" id="btnF" aria-pressed="false">°F</button>
+      </div>
+
+      <!-- Location -->
+      <button class="loc-btn" id="locationBtn" aria-label="Use my location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
+        </svg>
+        <span>My Location</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Favorite chips sub-bar -->
+  <div style="background:rgba(7,9,15,.7);border-bottom:1px solid var(--border);padding:10px 32px;backdrop-filter:blur(12px)">
+    <div class="fav-chips" id="favChips"></div>
+  </div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="main-content">
+    <div id="content"></div>
+  </main>
+
+</div><!-- /app-shell -->
+
+<!-- Toast -->
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<!-- Scripts (order matters) -->
+<script src="js/config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/weatherService.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
