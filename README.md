@@ -95,7 +95,7 @@ const CONFIG = {
 1. Push the project folder to a GitHub repo
 2. Go to **Settings → Pages**
 3. Set source to **main branch / root**
-4. Your app will be live at `https://yourusername.github.io/repo-name/`
+4. Your app will be live at `https://github.com/BasaSohan/week4-weather-app`
 
 ---
 
